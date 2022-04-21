@@ -1,0 +1,52 @@
+log:
+  level: error
+
+metrics:
+  influxDB:
+    database: "traefik"
+    address: "http://localhost:8086"
+    username: ""
+    password: ""
+    pushInterval: 60s
+    protocol: http
+
+entryPoints:
+  http:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: https
+          scheme: https
+
+  https:
+    address: ":443"
+
+  traefik:
+    address: ":8080"
+
+api:
+  insecure: true
+  dashboard: true
+
+serversTransport:
+  insecureSkipVerify: true
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: proxynetwork
+
+  file:
+    directory: ./rules
+    watch: true
+
+certificatesResolvers:
+  letsencrypt:
+    acme:
+      email: acme@example.com
+      storage: /acme.json
+      dnsChallenge:
+        provider: transip
+        delayBeforeCheck: 0
