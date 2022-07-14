@@ -19,3 +19,7 @@ This file is used to set up a reverse proxy in pentests and red team assessments
 Prerequisites:
 - working DNS (I use transip)
 - Server connected to the internet, no NAT, no WAF, just use a AWS instance or something
+
+### crapfiller.py
+--------------------
+This file is a skeleton to fill scam sites with fake data.
