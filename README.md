@@ -7,6 +7,9 @@ This file is used to deploy Burp Collaborator by using this command:
 
 `/usr/bin/java -Xms10m -Xmx200m -XX:GCTimeRatio=19 -jar /home/kali/collab/burpsuite_pro.jar --collaborator-server --collaborator-config=/home/kali/collab/collab.config`
 
+### crapfiller.py
+--------------------
+This file is a skeleton to fill scam sites with fake data.
 
 ### install_collab_certs.sh
 --------------------
@@ -20,6 +23,3 @@ Prerequisites:
 - working DNS (I use transip)
 - Server connected to the internet, no NAT, no WAF, just use a AWS instance or something
 
-### crapfiller.py
---------------------
-This file is a skeleton to fill scam sites with fake data.
